@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{6A8A2A22-5EED-4FB2-9612-BA061574A36E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{87045293-B875-4654-928D-C0CD053CF47F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClearerPayAuth.Domain", "ClearerPayAuth.Domain\ClearerPayAuth.Domain.csproj", "{8F59A51F-E12F-42BA-B969-29E1E9E75A45}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClearerPayAuth.Application", "ClearerPayAuth.Application\ClearerPayAuth.Application.csproj", "{7BD1A2A9-C6C9-4D20-9D02-11E118AFF36C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8F59A51F-E12F-42BA-B969-29E1E9E75A45} = {6A8A2A22-5EED-4FB2-9612-BA061574A36E}
+		{7BD1A2A9-C6C9-4D20-9D02-11E118AFF36C} = {6A8A2A22-5EED-4FB2-9612-BA061574A36E}
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8F59A51F-E12F-42BA-B969-29E1E9E75A45}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F59A51F-E12F-42BA-B969-29E1E9E75A45}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F59A51F-E12F-42BA-B969-29E1E9E75A45}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F59A51F-E12F-42BA-B969-29E1E9E75A45}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7BD1A2A9-C6C9-4D20-9D02-11E118AFF36C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7BD1A2A9-C6C9-4D20-9D02-11E118AFF36C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7BD1A2A9-C6C9-4D20-9D02-11E118AFF36C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7BD1A2A9-C6C9-4D20-9D02-11E118AFF36C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
