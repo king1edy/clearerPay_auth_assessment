@@ -13,14 +13,12 @@ namespace ClearerPayAuth.Infrastructure.Data
     {
         private readonly IConfiguration _config;
 
-        public DbConnectionFactory(IConfiguration config)
-        {
-            _config = config;
-        }
+        public DbConnectionFactory(IConfiguration config) => _config = config;
 
         public IDbConnection CreateConnection()
         {
-            return new SqlConnection(_config.GetConnectionString("DefaultConnection"));
+            var connectionString = _config.GetConnectionString("DefaultConnection");
+            return new SqlConnection(connectionString); // or NpgsqlConnection for PostgreSQL
         }
     }
 }

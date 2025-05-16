@@ -27,15 +27,17 @@ public class AuthService : IAuthService
         if (existingUser != null) return false;
 
         var hashedPassword = BCrypt.Net.BCrypt.HashPassword(dto.Password);
-        var user = new User { Email = dto.Email, PasswordHash = hashedPassword };
-        await _userRepo.AddAsync(user);
+        string userName = $"{dto.FirstName} {dto.LastName}";
+        var user = new User { FirstName = dto.FirstName, LastName = dto.LastName, Username = userName, Email = dto.Email, Password = hashedPassword };
+        
+        var sql = "INSERT INTO Users (FirstName, LastName, UserName, Email, Password) VALUES (@FirstName, @UserName, @LastName, @Email, @Password)";
+        await _userRepo.AddAsync(sql, user);
         return true;
     }
-
     public async Task<string?> LoginAsync(LoginUserDto dto)
     {
         var user = await _userRepo.GetByEmailAsync(dto.Email);
-        if (user == null || !BCrypt.Net.BCrypt.Verify(dto.Password, user.PasswordHash))
+        if (user == null || !BCrypt.Net.BCrypt.Verify(dto.Password, user.Password))
             return null;
 
         var tokenHandler = new JwtSecurityTokenHandler();
