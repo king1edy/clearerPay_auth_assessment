@@ -4,7 +4,7 @@ using System.Text;
 using ClearerPayAuth.Domain.Entities;
 using Microsoft.IdentityModel.Tokens;
 
-namespace ClearerPayAuth.Infrastructure.Auth;
+namespace ClearerPayAuth.Application.Auth;
 
 public class JwtTokenGenerator
 {
@@ -23,17 +23,20 @@ public class JwtTokenGenerator
             new Claim(JwtRegisteredClaimNames.UniqueName, user.Username)
         };
 
-        var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_jwtSettings.Key));
+        var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_jwtSettings.SecretKey));
         var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 
         var token = new JwtSecurityToken(
-            issuer: _jwtSettings.Issuer,
-            audience: _jwtSettings.Audience,
+            issuer: _jwtSettings.ValidIssuer,
+            audience: _jwtSettings.ValidAudience,
             claims: claims,
-            expires: DateTime.UtcNow.AddMinutes(_jwtSettings.ExpiryMinutes),
+            expires: DateTime.UtcNow.AddMinutes(_jwtSettings.ExpiryInMinutes),
             signingCredentials: creds
         );
 
         return new JwtSecurityTokenHandler().WriteToken(token);
     }
+
+    // compare customer password
+    public bool IsValidPassword(string password, string userPassword) => BCrypt.Net.BCrypt.Verify(password, userPassword);
 }

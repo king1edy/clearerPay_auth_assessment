@@ -1,6 +1,7 @@
 using System.Data;
 using ClearerPayAuth.API.Configuration;
-using ClearerPayAuth.Infrastructure.Auth;
+using ClearerPayAuth.API.Middleware;
+using ClearerPayAuth.Application.Auth;
 using ClearerPayAuth.Infrastructure.Configuration;
 using Microsoft.Data.SqlClient;
 
@@ -33,6 +34,9 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.UseAuthentication();
 app.UseAuthorization();
+
+// add jwt middleware for jwt token validation
+app.UseMiddleware<JwtMiddleware>();
 
 app.MapControllers();
 

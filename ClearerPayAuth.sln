@@ -1,8 +1,14 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36109.1
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{6A8A2A22-5EED-4FB2-9612-BA061574A36E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{87045293-B875-4654-928D-C0CD053CF47F}"
+	ProjectSection(SolutionItems) = preProject
+		docs.md = docs.md
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClearerPayAuth.Domain", "ClearerPayAuth.Domain\ClearerPayAuth.Domain.csproj", "{8F59A51F-E12F-42BA-B969-29E1E9E75A45}"
 EndProject
@@ -13,18 +19,14 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClearerPayAuth.API", "ClearerPayAuth.API\ClearerPayAuth.API.csproj", "{7C3F3976-FB62-4652-BEA0-521720BE6C53}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "scripts", "scripts", "{7EAFB3AF-4335-492F-B09A-B0D76095123C}"
+	ProjectSection(SolutionItems) = preProject
+		user.sql = user.sql
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{8F59A51F-E12F-42BA-B969-29E1E9E75A45} = {6A8A2A22-5EED-4FB2-9612-BA061574A36E}
-		{7BD1A2A9-C6C9-4D20-9D02-11E118AFF36C} = {6A8A2A22-5EED-4FB2-9612-BA061574A36E}
-		{9E07804C-76DC-40E3-81D6-E6672D461F86} = {6A8A2A22-5EED-4FB2-9612-BA061574A36E}
-		{7C3F3976-FB62-4652-BEA0-521720BE6C53} = {6A8A2A22-5EED-4FB2-9612-BA061574A36E}
-		{7EAFB3AF-4335-492F-B09A-B0D76095123C} = {6A8A2A22-5EED-4FB2-9612-BA061574A36E}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{8F59A51F-E12F-42BA-B969-29E1E9E75A45}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -43,5 +45,15 @@ Global
 		{7C3F3976-FB62-4652-BEA0-521720BE6C53}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7C3F3976-FB62-4652-BEA0-521720BE6C53}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7C3F3976-FB62-4652-BEA0-521720BE6C53}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8F59A51F-E12F-42BA-B969-29E1E9E75A45} = {6A8A2A22-5EED-4FB2-9612-BA061574A36E}
+		{7BD1A2A9-C6C9-4D20-9D02-11E118AFF36C} = {6A8A2A22-5EED-4FB2-9612-BA061574A36E}
+		{9E07804C-76DC-40E3-81D6-E6672D461F86} = {6A8A2A22-5EED-4FB2-9612-BA061574A36E}
+		{7C3F3976-FB62-4652-BEA0-521720BE6C53} = {6A8A2A22-5EED-4FB2-9612-BA061574A36E}
+		{7EAFB3AF-4335-492F-B09A-B0D76095123C} = {6A8A2A22-5EED-4FB2-9612-BA061574A36E}
 	EndGlobalSection
 EndGlobal
