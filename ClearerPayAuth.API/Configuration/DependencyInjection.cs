@@ -17,14 +17,16 @@ public static class DependencyInjection
         })
             .AddJwtBearer(options =>
             {
-                var key = Encoding.UTF8.GetBytes(configuration["Jwt:Secret"]);
+                var key = Encoding.UTF8.GetBytes(configuration["Jwt:SecretKey"]);
                 options.TokenValidationParameters = new TokenValidationParameters
                 {
-                    ValidateIssuer = false,
-                    ValidateAudience = false,
-                    ValidateLifetime = true,
                     ValidateIssuerSigningKey = true,
-                    IssuerSigningKey = new SymmetricSecurityKey(key)
+                    IssuerSigningKey = new SymmetricSecurityKey(key),
+                    ValidateIssuer = true,
+                    ValidateAudience = true,
+                    ValidIssuer = configuration["Jwt:validIssuer"],
+                    ValidAudience = configuration["Jwt:validAudience"],
+                    ClockSkew = TimeSpan.Zero // No clock skew for testing
                 };
             });
         
